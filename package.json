@@ -1,0 +1,25 @@
+{
+  "name": "learn-lingo-backend",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/stas-hanchev/learn-lingo-backend#readme",
+  "bugs": {
+    "url": "https://github.com/stas-hanchev/learn-lingo-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stas-hanchev/learn-lingo-backend.git"
+  },
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "globals": "^17.9.0",
+    "nodemon": "^3.1.14"
+  }
+}
