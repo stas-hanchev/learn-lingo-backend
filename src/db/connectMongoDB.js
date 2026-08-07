@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { Teacher } from '../models/teacher';
+import { Teacher } from '../models/teacher.js';
 
 export const connectMongoDB = async () => {
   try {

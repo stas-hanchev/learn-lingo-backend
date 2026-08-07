@@ -13,6 +13,7 @@ import cookieParser from "cookie-parser";
 
 import authRoutes from './routes/authRoutes.js';
 import teachersRoutes from './routes/teachersRoutes.js';
+import favoritesRoutes from './routes/favoritesRoutes.js';
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
 
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 
 app.use(authRoutes);
 app.use(teachersRoutes);
+app.use(favoritesRoutes);
 
 app.use(notFoundHandler);
 app.use(errors());

@@ -1,4 +1,4 @@
-import { Teacher } from './models/Teacher.js';
+import { Teacher } from '../models/Teacher.js';
 import createHttpError from 'http-errors';
 
 export const getTeachers = async (req, res) => {
