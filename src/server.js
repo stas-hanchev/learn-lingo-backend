@@ -10,6 +10,7 @@ import { logger } from './middleware/logger.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
+import authRoutes from './routes/authRoutes.js';
 import teachersRoutes from './routes/teachersRoutes.js';
 
 dns.setServers(['1.1.1.1', '8.8.8.8']);
@@ -25,6 +26,7 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Hello world!' });
 });
 
+app.use(authRoutes);
 app.use(teachersRoutes);
 
 app.use(notFoundHandler);
