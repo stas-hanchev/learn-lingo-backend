@@ -135,3 +135,7 @@ export const getSession = async (req, res) => {
 
   res.status(200).json({ success: true });
 };
+
+export const getMe = async (req, res) => {
+  res.status(200).json(req.user);
+};
