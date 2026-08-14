@@ -4,7 +4,7 @@ import createHttpError from 'http-errors';
 export const getTeachers = async (req, res) => {
   const {
     page = 1,
-    perPage = 4,
+    perPage = 3,
     language,
     level,
     price,
