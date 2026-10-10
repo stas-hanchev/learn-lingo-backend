@@ -15,9 +15,9 @@ export const getTeachersSchema = {
   [Segments.QUERY]: Joi.object({
     page: Joi.number().integer().min(1).default(1),
     perPage: Joi.number().integer().min(3).max(20).default(4),
-    language: Joi.string().optional(),
-    level: Joi.string().optional(),
-    price: Joi.number().min(0).optional(),
+    language: Joi.string().max(50).optional(),
+    level: Joi.string().max(50).optional(),
+    price: Joi.number().min(0).max(10000).optional(),
     sortBy: Joi.string().valid("_id", "name", "surname", "rating", "price_per_hour", "lessons_done").default("_id"),
     sortOrder: Joi.string().valid("asc", "desc").default("asc"),
   }),

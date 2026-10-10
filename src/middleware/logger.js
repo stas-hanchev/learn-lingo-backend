@@ -2,6 +2,7 @@ import pino from 'pino-http';
 
 export const logger = pino({
   level: 'info',
+  redact: ['req.headers.cookie', 'res.headers["set-cookie"]'],
   transport: {
     target: 'pino-pretty',
     options: {

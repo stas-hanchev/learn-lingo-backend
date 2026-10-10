@@ -2,7 +2,7 @@ import { model, Schema } from 'mongoose';
 
 const sessionSchema = new Schema(
   {
-    userId: { type: Schema.Types.ObjectId, required: true },
+    userId: { type: Schema.Types.ObjectId, required: true, index: true },
     accessToken: { type: String, required: true },
     refreshToken: { type: String, required: true },
     accessTokenValidUntil: { type: Date, required: true },
@@ -10,5 +10,7 @@ const sessionSchema = new Schema(
   },
   { timestamps: true },
 );
+
+sessionSchema.index({ refreshTokenValidUntil: 1 }, { expireAfterSeconds: 0 });
 
 export const Session = model('Session', sessionSchema);
