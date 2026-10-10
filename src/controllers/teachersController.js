@@ -1,11 +1,12 @@
 import { trusted } from 'mongoose';
 import { Teacher } from '../models/teacher.js';
 import createHttpError from 'http-errors';
+import { DEFAULT_PER_PAGE } from '../constants/pagination.js';
 
 export const getTeachers = async (req, res) => {
   const {
     page = 1,
-    perPage = 3,
+    perPage = DEFAULT_PER_PAGE,
     language,
     level,
     price,

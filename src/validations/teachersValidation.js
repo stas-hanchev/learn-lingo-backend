@@ -1,5 +1,6 @@
 import { Joi, Segments } from 'celebrate';
 import { isValidObjectId } from 'mongoose';
+import { DEFAULT_PER_PAGE } from '../constants/pagination.js';
 
 const objectIdValidator = (value, helpers) => {
   return !isValidObjectId(value) ? helpers.message('Invalid id format') : value;
@@ -14,7 +15,7 @@ export const teacherIdParamSchema = {
 export const getTeachersSchema = {
   [Segments.QUERY]: Joi.object({
     page: Joi.number().integer().min(1).default(1),
-    perPage: Joi.number().integer().min(3).max(20).default(4),
+    perPage: Joi.number().integer().min(3).max(20).default(DEFAULT_PER_PAGE),
     language: Joi.string().max(50).optional(),
     level: Joi.string().max(50).optional(),
     price: Joi.number().min(0).max(10000).optional(),
