@@ -1,3 +1,4 @@
+import { trusted } from 'mongoose';
 import { Teacher } from '../models/teacher.js';
 import createHttpError from 'http-errors';
 
@@ -28,9 +29,9 @@ export const getTeachers = async (req, res) => {
   }
 
   if (price) {
-    filter.price_per_hour = {
+    filter.price_per_hour = trusted({
       $lte: Number(price),
-    };
+    });
   }
 
   const [totalItems, teachers] = await Promise.all([
