@@ -16,7 +16,7 @@ export const addFavorite = async (req, res) => {
   try {
     await Favorite.create({ userId: req.user._id, teacherId });
   } catch (err) {
-    if (err.code !== 11000) throw err; // 11000 = вже в обраних, ігноруємо
+    if (err.code !== 11000) throw err; // 11000 = already in favorites, ignore
   }
 
   res.status(201).json({ message: 'Added to favorites' });
